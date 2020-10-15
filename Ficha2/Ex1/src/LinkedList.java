@@ -13,14 +13,19 @@ public class LinkedList{
 
         NodeTest current = new NodeTest(data, null);
         if (head == null){
+
             this.head = current;
             this.tail = current;
             this.size++;
             return true;
         }else {
-             current = this.tail;
-             NodeTest next = new NodeTest(data, null);
-             current.setNext(next);
+
+            NodeTest last = head;
+            while (last.getNext() != null) {
+                last = last.getNext();
+            }
+            // Insert the new_node at last node
+            last.setNext(current);
             this.size++;
             return true;
         }

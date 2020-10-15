@@ -17,11 +17,9 @@ public class main {
         LinkedList lista = new LinkedList();
 
         lista.add(1);
-        lista.mostra();
-        System.out.println("DEposi");
         lista.add(2);
-        lista.mostra();
-        lista.remove(1);
+        lista.add(3);
+        //lista.remove(1);
         lista.mostra();
 
 
