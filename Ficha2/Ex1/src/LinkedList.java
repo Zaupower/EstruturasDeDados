@@ -1,6 +1,6 @@
-public class LinkedList{
+public class LinkedList<T>{
 
-    private NodeTest head, tail;
+    private NodeTest<T> head, tail;
 
     private long size;
 
@@ -9,7 +9,7 @@ public class LinkedList{
         this.tail = null;
         this.size = 0;
     }
-    public boolean add(int data){
+    public boolean add(T data){
 
         NodeTest current = new NodeTest(data, null);
         if (head == null){
@@ -31,17 +31,17 @@ public class LinkedList{
         }
     }
 
-    public int remove(int data) throws LinkedListExceptions {
+    public Object remove(T data) throws LinkedListExceptions {
         if(this.head == null){
             throw new LinkedListExceptions(LinkedListExceptions.EMPTYLIST);
         }
         else{
-            NodeTest current = head;
-            NodeTest previous = null;
+            NodeTest<T> current = head;
+            NodeTest<T> previous = null;
 
             boolean found = false;
             while(current!=null && found == false){
-                if(current.getData() == (data)){
+                if(current.getData().equals(data)){
                     found = true;
                 }else{
                     previous = current;
@@ -54,7 +54,7 @@ public class LinkedList{
                     this.head = null;
                     this.tail = null;
                 }else if(current.getData()==(head.getData())){
-                    NodeTest currentHead = current;
+                    NodeTest<T> currentHead = current;
                     head = head.getNext();
                     currentHead.setNext(null);
                 }else if(current.getData()==(tail.getData())){
@@ -73,7 +73,7 @@ public class LinkedList{
     }
 
     public void mostra(){
-        NodeTest current = head;
+        NodeTest<T> current = head;
         while(current!=null){
             System.out.println(current.toString());
             current= current.getNext();

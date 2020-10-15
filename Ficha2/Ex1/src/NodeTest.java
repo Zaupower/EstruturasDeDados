@@ -1,19 +1,19 @@
-public class NodeTest {
+public class NodeTest<T> {
 
-    private int data;
-    private NodeTest next;
+    private T data;
+    private NodeTest<T> next;
 
 
-    public NodeTest(int d, NodeTest nx){
+    public NodeTest(T d, NodeTest<T> nx){
         this.data = d;
         this.next = nx;
     }
 
-    public int getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(int data) {
+    public void setData(T data) {
         this.data = data;
     }
 
@@ -21,7 +21,7 @@ public class NodeTest {
         return next;
     }
 
-    public void setNext(NodeTest next) {
+    public void setNext(NodeTest<T> next) {
         this.next = next;
     }
 

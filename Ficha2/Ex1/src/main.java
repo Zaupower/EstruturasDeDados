@@ -14,11 +14,12 @@ public class main {
 
          **/
 
-        LinkedList lista = new LinkedList();
+        LinkedList<String> lista = new LinkedList<String>();
 
-        lista.add(1);
-        lista.add(2);
-        lista.add(3);
+        lista.add("1");
+        lista.add("2");
+        lista.add("3");
+        lista.add("3");
         //lista.remove(1);
         lista.mostra();
 
