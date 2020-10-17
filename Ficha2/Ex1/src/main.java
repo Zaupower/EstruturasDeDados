@@ -20,7 +20,7 @@ public class main {
         lista.add("2");
         lista.add("3");
         lista.add("3");
-        //lista.remove(1);
+        lista.remove("1");
         lista.mostra();
 
 

@@ -19,13 +19,10 @@ public class LinkedList<T>{
             this.size++;
             return true;
         }else {
-
-            NodeTest last = head;
-            while (last.getNext() != null) {
-                last = last.getNext();
-            }
+            NodeTest last = tail;
             // Insert the new_node at last node
             last.setNext(current);
+            this.tail = current;
             this.size++;
             return true;
         }
@@ -50,16 +47,23 @@ public class LinkedList<T>{
             }
 
             if(found == true){
+                //Caso so exista um elemento ou node
                 if(this.size == 1){
                     this.head = null;
                     this.tail = null;
+                //Caso o que se pretenda se encontre no head node
                 }else if(current.getData()==(head.getData())){
-                    NodeTest<T> currentHead = current;
+                    //NodeTest<T> currentHead = current;
                     head = head.getNext();
-                    currentHead.setNext(null);
+                    current.setNext(null);
+                    /**
+                    head = head.getNext();
+                     currentHead.setNext(null);**/
+                //Caso se encontre na tail
                 }else if(current.getData()==(tail.getData())){
                     previous.setNext(null);
                     tail = previous;
+                //Caso esteja no meio o anterior aponta para o seguinte do removido e o removido para null
                 }else {
                     previous.setNext(current.getNext());
                     current.setNext(null);
