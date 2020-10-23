@@ -9,7 +9,6 @@ public class PostFixCalculatorDemo {
         PostFixCalculator calc = new PostFixCalculator();
         InfixToPrefix infixToPrefix = new InfixToPrefix();
         String prefix =  infixToPrefix.getPrefix(inputString);
-        String newS = "10 10 5 * 5 * +";
         System.out.println("Prefix result: "+prefix);
         calc.calculateFile(prefix);
     }
