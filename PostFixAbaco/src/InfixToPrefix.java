@@ -1,11 +1,11 @@
 
 import java.util.Stack;
 
-public class PracticeInfixToPrefix {
+public class InfixToPrefix {
     private static String exp;
     public String getPrefix;
 
-    public PracticeInfixToPrefix() {
+    public InfixToPrefix() {
     }
 
     // A utility function to return precedence of a given operator

@@ -7,10 +7,9 @@ public class PostFixCalculatorDemo {
         Scanner scanner = new Scanner(System.in);
         String inputString = scanner.nextLine();
         PostFixCalculator calc = new PostFixCalculator();
-        PracticeInfixToPrefix practiceInfixToPrefix = new PracticeInfixToPrefix();
-        String infix = inputString;
-        System.out.println("Infix: "+infix);
-        String prefix =  practiceInfixToPrefix.getPrefix(infix);
+        InfixToPrefix infixToPrefix = new InfixToPrefix();
+        String prefix =  infixToPrefix.getPrefix(inputString);
+        String newS = "10 10 5 * 5 * +";
         System.out.println("Prefix result: "+prefix);
         calc.calculateFile(prefix);
     }

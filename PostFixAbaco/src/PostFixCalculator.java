@@ -1,7 +1,4 @@
-import LinkedListPakege.LinkedList;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 
 public class PostFixCalculator {
@@ -10,7 +7,8 @@ public class PostFixCalculator {
     private static final String SUB = "-";
     private static final String MUL = "*";
     private static final String DIV = "/";
-//ler array de file em vez de string
+    private static final String POW = "^";
+
     public void calculateFile(String fileName) throws IOException {
 
         System.out.println(fileName + " = " + calculate(fileName));
@@ -28,7 +26,7 @@ public class PostFixCalculator {
         int operand1, operand2;
 
         for(int i = 0; i < el.length; i++) {
-            if( el[i].equals(ADD) || el[i].equals(SUB) || el[i].equals(MUL) || el[i].equals(DIV) ) {
+            if( el[i].equals(ADD) || el[i].equals(SUB) || el[i].equals(MUL) || el[i].equals(DIV) || el[i].equals(POW) ) {
                 operand2 = stack.pop();
                 operand1 = stack.pop();
                 switch(el[i]) {
@@ -52,6 +50,13 @@ public class PostFixCalculator {
 
                     case DIV: {
                         int local = operand1 / operand2;
+                        stack.push(local);
+                        break;
+                    }
+
+
+                    case POW: {
+                        int local = (int) Math.pow(operand1, operand2);
                         stack.push(local);
                         break;
                     }
