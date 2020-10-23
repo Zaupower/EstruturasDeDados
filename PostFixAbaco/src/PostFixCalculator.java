@@ -13,41 +13,7 @@ public class PostFixCalculator {
 //ler array de file em vez de string
     public void calculateFile(String fileName) throws IOException {
 
-        BufferedReader br = null;
-        StringBuilder sb = null;
-        try {
-            FileReader fileReader = new FileReader(fileName);
-            br = new BufferedReader(fileReader);
-
-            sb = new StringBuilder();
-            String line = br.readLine();
-
-            while (line != null) {
-                sb.append(line);
-                line = br.readLine();
-            }
-
-            String inputReal = sb.toString();
-            //TESTE
-            LinkedList<String> lista = new LinkedList<String>();
-            for (int i = 0; i < lista.getSize(); i++){
-
-            }
-                String inputTest = "6 5 2 3 + 8 * + 3 + *";
-
-                System.out.println(inputTest + " = " + calculate(inputTest));
-            //TESTE
-
-            /**
-            String inputTest = "6 5 2 3 + 8 * + 3 + *";
-            //TESTE
-            System.out.println(inputTest + " = " + calculate(inputTest));**/
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            br.close();
-        }
+        System.out.println(fileName + " = " + calculate(fileName));
     }
 
     private int calculate(String input) {
