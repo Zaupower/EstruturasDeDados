@@ -1,3 +1,4 @@
+import Exceptions.ElementNotFoundException;
 import Exceptions.EmptyCollectionException;
 
 import java.util.Iterator;
@@ -21,7 +22,7 @@ public interface ListADT<T> extends Iterable<T> {
      *
      * @param element the element to be removed from the list
      */
-    public T remove (T element) throws EmptyCollectionException;
+    public T remove (T element) throws EmptyCollectionException, ElementNotFoundException, ElementNotFoundException;
 
     /**
      * Returns a reference to the first element in this list.

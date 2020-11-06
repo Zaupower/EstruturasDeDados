@@ -13,6 +13,7 @@ public class ArrayOrderedListDemo {
         arrayOrderedList.add("4");
         arrayOrderedList.add("-1");
         arrayOrderedList.add("3");
+        arrayOrderedList.removeFirst();
         System.out.println(arrayOrderedList.toString());
 /**
         arrayOrderedList.add("2");

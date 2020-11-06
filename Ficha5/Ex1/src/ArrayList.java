@@ -1,4 +1,6 @@
+import Exceptions.ElementNotFoundException;
 import Exceptions.EmptyCollectionException;
+import Node.LinearNode;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -28,7 +30,6 @@ public class ArrayList<T> implements ListADT<T>{
         for (int i = 0; i< index -1; i++){
             list[i] = list[i+1];
         }
-        //list[index-1] = null;
         index--;
         return objRemoved;
     }
@@ -44,7 +45,6 @@ public class ArrayList<T> implements ListADT<T>{
         index--;
         return objRemoved;
     }
-
     @Override
     public T remove(T element) throws EmptyCollectionException {
         T removido = null;
@@ -64,7 +64,45 @@ public class ArrayList<T> implements ListADT<T>{
         list[index-1] = null;
         return removido;
     }
+/**
+public T remove (T targetElement)
+        throws EmptyCollectionException, ElementNotFoundException {
+    if (isEmpty())
+        throw new EmptyCollectionException ("List");
 
+    boolean found = false;
+    LinearNode<T> previous = null;
+    LinearNode<T> current = index;
+
+    while (current != null && !found)
+        if (targetElement.equals (current.getElement()))
+            found = true;
+        else
+        {
+            previous = current;
+            current = current.getNext();
+        }
+
+    if (!found)
+        throw new ElementNotFoundException ("List");
+
+    if (size() == 1)
+        index = tail = null;
+    else if (current.equals (index))
+        head = current.getNext();
+    else if (current.equals (tail))
+    {
+        tail = previous;
+        tail.setNext(null);
+    }
+    else
+        previous.setNext(current.getNext());
+
+    count--;
+
+    return current.getElement();
+}
+**/
     @Override
     public T first() throws EmptyCollectionException {
         if (isEmpty()){

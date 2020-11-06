@@ -5,8 +5,6 @@ import java.util.Iterator;
 
 public class ArrayOrderedList<T> extends ArrayList<T> implements OrderedListADT<T> {
 
-
-
     @Override
     public void add(T element) throws EmptyCollectionException {
         if (element instanceof Comparable){
@@ -45,6 +43,4 @@ public class ArrayOrderedList<T> extends ArrayList<T> implements OrderedListADT<
             System.out.println("Obj nao e instancia de Comparable");
         }
     }
-
-
 }
