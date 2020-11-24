@@ -1,3 +1,5 @@
+package Node;
+
 public class LinearNode<T>
 {
     private LinearNode<T> next;
@@ -51,5 +53,13 @@ public class LinearNode<T>
     public void setElement (T elem)
     {
         element = elem;
+    }
+
+    @Override
+    public String toString() {
+        return "LinearNode{" +
+                "next=" + next +
+                ", element=" + element +
+                '}';
     }
 }

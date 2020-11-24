@@ -1,3 +1,5 @@
+package List;
+import Node.LinearNode;
 public class SinglyLinkedList<T> {
 
     private int size;
@@ -45,9 +47,19 @@ public class SinglyLinkedList<T> {
     }
 
     public boolean isEmpty() {
-        return size == 0;
+        if (size>0){
+            return false;
+        }else {
+            return true;
+        }
     }
 
+    public boolean asNext(LinearNode<T> element){
+        if (element.getNext() != null){
+            return true;
+        }else
+            return false;
+    }
     private class Node<T> {
         private T data;
         private Node<T> next;
@@ -57,5 +69,20 @@ public class SinglyLinkedList<T> {
         }
 
     }
+    public T recursiveGetLast(){
+        if (!asNext(head)){
+            return head.getElement();
+        }
+        head = head.getNext();
+        recursiveGetLast();
+        return head.getElement();
+    }
 
+    @Override
+    public String toString() {
+        return "SinglyLinkedList{" +
+                "size=" + size +
+                ", head=" + head +
+                '}';
+    }
 }
