@@ -1,5 +1,7 @@
 package Ex1Carro;
 
+import ListasEArrays.Node.DoubleNode;
+
 public class SortingAndSearching<T> {
 
 
@@ -48,6 +50,60 @@ public class SortingAndSearching<T> {
         else if (midpoint + 1 <= max)
             found = binarySearch(data, midpoint + 1, max, target);
         return found;
+    }
+    public static <T extends Comparable<? super T>> boolean
+    listBnarySearch (DoubleNode<T> head, DoubleNode<T> value){
+        DoubleNode<T> start = head;
+        DoubleNode<T> last = null;
+
+        do
+        {
+            // Find Middle
+            DoubleNode<T> mid = middleNode(start, last);
+
+            // If middle is empty
+            if (mid == null)
+                return null;
+
+            // If value is present at middle
+            if (mid.data == value)
+                return mid;
+
+                // If value is less than mid
+            else if (mid.data > value)
+            {
+                start = mid.next;
+            }
+
+            // If the value is more than mid.
+            else
+                last = mid;
+        } while (last == null || last != start);
+
+        // value not present
+        // Function to find middle element
+        // using Fast and Slow pointers
+        static Node middleNode(Node start, Node last)
+        {
+            if (start == null)
+                return null;
+
+            Node slow = start;
+            Node fast = start.next;
+
+            while (fast != last)
+            {
+                fast = fast.next;
+                if (fast != last)
+                {
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+            }
+            return slow;
+        }
+        return null;
+
     }
     /**
      * Sorts the specified array of integers using the selection
