@@ -35,17 +35,23 @@ public class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return (count == 0);
     }
 
     @Override
     public int size() {
-        return 0;
+        return count;
     }
 
     @Override
     public boolean contains(T targetElement) {
-        return false;
+        boolean found = false;
+
+        for (int ct=0; ct<count && !found; ct++)
+            if (targetElement.equals(tree[ct]))
+                found = true;
+
+        return found;
     }
 
     /**
@@ -74,22 +80,66 @@ public class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
 
     @Override
     public Iterator<T> iteratorInOrder() {
-        return null;
+        ArrayUnorderedList<T> templist = new ArrayUnorderedList<T>();
+        inorder (0, templist);
+
+        return templist.iterator();
     }
 
     @Override
     public Iterator<T> iteratorPreOrder() {
-        return null;
+        ArrayUnorderedList<T> templist = new ArrayUnorderedList<T>();
+        preorder (0, templist);
+
+        return templist.iterator();
+    }
+
+    private void preorder(int node, ArrayUnorderedList<T> templist) {
+        if (node < tree.length)
+            if (tree[node] != null)
+            {
+                templist.addToRear(tree[node]);
+                inorder (node*2+1, templist);
+                inorder ((node+1)*2, templist);
+            }
+
     }
 
     @Override
     public Iterator<T> iteratorPostOrder() {
-        return null;
+        ArrayUnorderedList<T> templist = new ArrayUnorderedList<T>();
+        postorder (0, templist);
+
+        return templist.iterator();
+    }
+
+    private void postorder(int node, ArrayUnorderedList<T> templist) {
+        if (node < tree.length)
+            if (tree[node] != null)
+            {
+                inorder (node*2+1, templist);
+                inorder ((node+1)*2, templist);
+                templist.addToRear(tree[node]);
+            }
     }
 
     @Override
     public Iterator<T> iteratorLevelOrder() {
-        return null;
+        ArrayUnorderedList<T> tempList = new ArrayUnorderedList<T>();
+        int ct = 0; // current number of elements added to list
+        int i = 0; // current position in array
+
+        while (ct < count)
+        {
+            if (tree[i] != null)
+            {
+                tempList.addToRear(tree[i]);
+                ct++;
+            }
+            i++;
+        }
+
+        return tempList.iterator();
     }
 
 
@@ -106,5 +156,13 @@ public class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
                 templist.addToRear(tree[node]);
                 inorder ((node+1)*2, templist);
             }
+    }
+
+    @Override
+    public String toString() {
+        ArrayUnorderedList<T> templist = new ArrayUnorderedList<T>();
+        inorder (0, templist);
+
+        return templist.toString();
     }
 }
