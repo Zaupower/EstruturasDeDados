@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marce\\Desktop\\LDS\\ChatApi\\SignalRChat\\SignalRChat\\SignalRChat.csproj": {}
+    "C:\\Users\\marce\\Desktop\\ED\\EstruturasDeDados\\LDSChatSignalR\\SignalRChat\\SignalRChat.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marce\\Desktop\\LDS\\ChatApi\\SignalRChat\\SignalRChat\\SignalRChat.csproj": {
+    "C:\\Users\\marce\\Desktop\\ED\\EstruturasDeDados\\LDSChatSignalR\\SignalRChat\\SignalRChat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marce\\Desktop\\LDS\\ChatApi\\SignalRChat\\SignalRChat\\SignalRChat.csproj",
+        "projectUniqueName": "C:\\Users\\marce\\Desktop\\ED\\EstruturasDeDados\\LDSChatSignalR\\SignalRChat\\SignalRChat.csproj",
         "projectName": "SignalRChat",
-        "projectPath": "C:\\Users\\marce\\Desktop\\LDS\\ChatApi\\SignalRChat\\SignalRChat\\SignalRChat.csproj",
+        "projectPath": "C:\\Users\\marce\\Desktop\\ED\\EstruturasDeDados\\LDSChatSignalR\\SignalRChat\\SignalRChat.csproj",
         "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marce\\Desktop\\LDS\\ChatApi\\SignalRChat\\SignalRChat\\obj\\",
+        "outputPath": "C:\\Users\\marce\\Desktop\\ED\\EstruturasDeDados\\LDSChatSignalR\\SignalRChat\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marce\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
